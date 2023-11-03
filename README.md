@@ -17,13 +17,49 @@ composer require creode/permissions-seeder
 
 ## Usage
 
-### Extend the class
+### The `getPermissions()` function
+This is a function used to return an array of permissions to create. By default it uses the following but of course can be overridden in child classes.
 
-### Override the `getPermissions` method
+```php
+protected function getPermissions(): array {
+    return [
+        'viewAny',
+        'view',
+        'update',
+        'create',
+        'delete',
+        'destroy',
+    ];
+}
+```
 
-### Override the `getRoles` method
+### The `getPermissionGroup()` function
+This is an abstract function used to determine the type of resource to create permissions for. It should return a string for example "Asset". This is used to be appended to the end of the permission name for instance "viewAnyAsset" or "deleteAsset". It also is used to determine the name of the role to create.
+```php
+protected function getPermissionGroup(): string {
+    return 'Asset';
+}
+```
 
-### Call the `seed` method
+### The getRoleName() function
+This is a function used to return the name of the role to create. By default it uses the following but of course can be overridden in child classes. It defaults to the following but can be overridden in child classes:
+
+```php
+protected function getRoleName(): string {
+    return strtolower($this->getPermissionGroup().'-manager');
+}
+```
+
+## Properties
+This class exposes the following properties that can be used to override the default behaviour:
+
+```php
+/** Determines if we should give super admin permissions to this group. */
+protected $giveSuperAdminPermissions = true;
+
+/** Determines if we should create a role for this group. */
+protected $shouldCreateRole = true;
+```
 
 ## Testing
 
