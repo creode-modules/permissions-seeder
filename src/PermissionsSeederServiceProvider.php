@@ -16,10 +16,6 @@ class PermissionsSeederServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('permissions-seeder')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_permissions-seeder_table')
-            ->hasCommand(PermissionsSeederCommand::class);
+            ->name('permissions-seeder');
     }
 }
