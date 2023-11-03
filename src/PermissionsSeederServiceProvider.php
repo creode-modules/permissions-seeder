@@ -2,9 +2,9 @@
 
 namespace Creode\PermissionsSeeder;
 
+use Creode\PermissionsSeeder\Commands\PermissionsSeederCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Creode\PermissionsSeeder\Commands\PermissionsSeederCommand;
 
 class PermissionsSeederServiceProvider extends PackageServiceProvider
 {

@@ -2,9 +2,9 @@
 
 namespace Creode\PermissionsSeeder\Tests;
 
+use Creode\PermissionsSeeder\PermissionsSeederServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Creode\PermissionsSeeder\PermissionsSeederServiceProvider;
 
 class TestCase extends Orchestra
 {
