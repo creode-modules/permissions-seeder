@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Creode\PermissionsSeeder\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class PermissionsSeederCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'permissions-seeder';
 
     public $description = 'My command';
 
