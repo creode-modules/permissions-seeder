@@ -50,7 +50,7 @@ protected function getRoleName(): string {
 }
 ```
 
-## Properties
+### Properties
 This class exposes the following properties that can be used to override the default behaviour:
 
 ```php
