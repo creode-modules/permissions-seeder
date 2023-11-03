@@ -33,7 +33,7 @@ protected function getPermissions(): array {
 }
 ```
 
-### The `getPermissionGroup()` function
+### The `getPermissionGroup()` function
 This is an abstract function used to determine the type of resource to create permissions for. It should return a string for example "Asset". This is used to be appended to the end of the permission name for instance "viewAnyAsset" or "deleteAsset". It also is used to determine the name of the role to create.
 ```php
 protected function getPermissionGroup(): string {
