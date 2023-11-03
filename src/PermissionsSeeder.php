@@ -3,22 +3,22 @@
 namespace Creode\PermissionsSeeder;
 
 use Illuminate\Database\Seeder;
-use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
 
 abstract class PermissionsSeeder extends Seeder
 {
     /**
      * Determines if we should give super admin permissions to this group.
      *
-     * @var boolean
+     * @var bool
      */
     protected $giveSuperAdminPermissions = true;
 
     /**
      * Determines if we should create a role for this group.
      *
-     * @var boolean
+     * @var bool
      */
     protected $shouldCreateRole = true;
 
@@ -34,10 +34,10 @@ abstract class PermissionsSeeder extends Seeder
 
         $assetPermissions = [];
         foreach ($permissionKeys as $permission) {
-            $permissionName = $permission . $this->getPermissionGroup();
+            $permissionName = $permission.$this->getPermissionGroup();
             $assetPermissions[] = Permission::create([
                 'group' => $this->getPermissionGroup(),
-                'name' => $permissionName
+                'name' => $permissionName,
             ]);
         }
 
@@ -54,8 +54,6 @@ abstract class PermissionsSeeder extends Seeder
 
     /**
      * Gets the permission keys to create.
-     *
-     * @return array
      */
     protected function getPermissions(): array
     {
@@ -78,11 +76,9 @@ abstract class PermissionsSeeder extends Seeder
 
     /**
      * Gets the role name to use.
-     *
-     * @return string
      */
     protected function getRoleName(): string
     {
-        return strtolower($this->getPermissionGroup() . '-manager');
+        return strtolower($this->getPermissionGroup().'-manager');
     }
 }
